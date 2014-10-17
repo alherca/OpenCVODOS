@@ -1,0 +1,5 @@
+DESCRIPTION="OpenCV OpenDomoOS" 
+REQUIRED_BYTES="50000" 
+SCREENSHOTS="https://github.com/alherca/OpenCVODOS/screenshot.png" 
+SCHEME="FEFABA FFFFFF" 
+ICON="opencvodos.png"
