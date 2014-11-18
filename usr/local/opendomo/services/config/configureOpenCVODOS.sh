@@ -24,6 +24,9 @@ do
 		echo
 		exit 0
 	fi
+	source ./$i
+	ID=`basename $i | cut -f1 -d.`
+	echo "	-$ID	$NAME	camera $TYPE"
 done
 
 if test -f $CFGFILE;
