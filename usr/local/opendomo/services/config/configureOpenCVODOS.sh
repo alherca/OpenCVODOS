@@ -12,6 +12,20 @@ CFGFILE="/etc/opendomo/$DEVNAME.conf"
 
 test -d $CONFIGDIR || mkdir $CONFIGDIR
 
+cd $CAMDIR
+
+for i in *.conf; 
+do
+	if test "$i" = "*.conf"
+	then
+		echo "#INFO No cameras were found"
+		echo "actions:"
+		echo "	addControlDevice.sh "
+		echo
+		exit 0
+	fi
+done
+
 if test -f $CFGFILE;
 then
 	source $CFGFILE
