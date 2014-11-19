@@ -14,6 +14,7 @@ test -d $CONFIGDIR || mkdir $CONFIGDIR
 
 cd $CAMDIR
 
+
 for i in *.conf; 
 do
 	if test "$i" = "*.conf"
