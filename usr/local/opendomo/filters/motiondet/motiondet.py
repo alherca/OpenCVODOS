@@ -19,8 +19,8 @@ confNAME = config.get('Definition', 'NAME')
 print confID
 print confNAME
 
-imga = cv2.imread('/var/www/data/' + ID + '.jpg')
-imgb = cv2.imread('/var/www/data/' + ID + '.jpg')
+imga = cv2.imread('/var/www/data/' + confID + '.jpg')
+imgb = cv2.imread('/var/www/data/' + confID + '.jpg')
 
 imgac = cv2.cvtColor(imga, cv2.COLOR_BGR2GRAY)
 imgbc = cv2.cvtColor(imgb, cv2.COLOR_BGR2GRAY)
