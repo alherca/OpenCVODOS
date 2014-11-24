@@ -8,7 +8,6 @@
 DEVNAME="opencvodos"
 CONFIGDIR="/etc/opendomo/vision/filters/"
 CAMDIR="/etc/opendomo/control/"
-# CFGFILE="/etc/opendomo/$DEVNAME.conf"
 
 if ! test -z "$2"
 then
