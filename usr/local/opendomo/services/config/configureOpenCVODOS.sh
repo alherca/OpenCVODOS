@@ -15,12 +15,17 @@ test -d $CONFIGDIR || mkdir $CONFIGDIR
 
 if ! test -z "$2"
 then
-	ID="$1"
-	NAME="$2"
-	test -d $CONFIGDIR/$ID || mkdir $CONFIGDIR/$ID
-	FILENAME="$CONFIGDIR/$ID.conf"
-	echo "ID=$ID" > $FILENAME
-	echo "NAME='$NAME'" >> $FILENAME
+	if test -f $CAMDIR/$1.conf
+	then
+		ID="$1"
+		NAME="$2"
+		test -d $CONFIGDIR/$ID || mkdir $CONFIGDIR/$ID
+		FILENAME="$CONFIGDIR/$ID.conf"
+		echo "ID=$ID" > $FILENAME
+		echo "NAME='$NAME'" >> $FILENAME
+	else
+		echo "#INFO No cameras were found, with ID:$1"
+	fi
 else
 	cd $CAMDIR
 	for i in *.conf; 
