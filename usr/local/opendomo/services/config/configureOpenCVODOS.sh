@@ -8,15 +8,23 @@
 DEVNAME="opencvodos"
 CONFIGDIR="/etc/opendomo/vision/filters/"
 CAMDIR="/etc/opendomo/control/"
-CFGFILE="/etc/opendomo/$DEVNAME.conf"
+# CFGFILE="/etc/opendomo/$DEVNAME.conf"
 
 test -d $CONFIGDIR || mkdir $CONFIGDIR
 
-cd $CAMDIR
 
-
-for i in *.conf; 
-do
+if ! test -z "$2"
+then
+	ID="$1"
+	NAME="$2"
+	test -d $CONFIGDIR/$ID || mkdir $CONFIGDIR/$ID
+	FILENAME="$CONFIGDIR/$ID.conf"
+	echo "ID=$ID" > $FILENAME
+	echo "NAME='$NAME'" >> $FILENAME
+else
+	cd $CAMDIR
+	for i in *.conf; 
+	do
 	if test "$i" = "*.conf"
 	then
 		echo "#INFO No cameras were found"
@@ -27,10 +35,7 @@ do
 	fi
 	source ./$i
 	ID=`basename $i | cut -f1 -d.`
-	echo "	-$ID	$NAME	camera $TYPE"
-done
-
-if test -f $CFGFILE;
-then
-	source $CFGFILE
+	echo "-ID:$ID	Name: $NAME"
+	done
+	echo "Usage: $0 [ID] [Name]"
 fi
