@@ -36,7 +36,7 @@ else
 	fi
 	source ./$i
 	ID=`basename $i | cut -f1 -d.`
-	echo "-ID:$ID	Name: $NAME"
+	echo "-ID:$ID	Name: Filter"
 	done
 	echo "Usage: $0 [ID] [Name]"
 fi
