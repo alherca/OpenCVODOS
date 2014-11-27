@@ -16,7 +16,7 @@ DESC="OpenCVODOS"
 PIDFILE="/var/opendomo/run/opencvodos.pid"
 REFRESH="2"
 CONFIGDIR="/etc/opendomo/vision/filters"
-FILTERSDIR="/usr/local/opendomo/filters/"
+FILTERSDIR="/usr/local/opendomo/filters"
 
 do_daemon() {
   	
