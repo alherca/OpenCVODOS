@@ -1,3 +1,8 @@
+#!/bin/python
+#desc:Filter circle detection using a webcam
+#package:opencvodos
+
+### Copyright(c) 2014 OpenDomo Services SL. Licensed under GPL v3 or later
 import cv2
 import numpy as np
 
