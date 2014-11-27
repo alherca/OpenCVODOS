@@ -10,10 +10,10 @@ import time
 import ConfigParser
 import numpy as np
 
-ID=sys.argv[1]
+IDC=sys.argv[1]
 
 config = ConfigParser.ConfigParser()
-config.read('/etc/opendomo/vision/filters/' + ID + '/motiondet.conf')
+config.read('/etc/opendomo/vision/filters/' + IDC + '/motiondet.conf')
 confID = config.get('Definition', 'ID')
 confNAME = config.get('Definition', 'NAME')
 print confID
