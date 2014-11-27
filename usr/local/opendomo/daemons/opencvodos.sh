@@ -31,7 +31,7 @@ do_daemon() {
 			ID=`basename $i | cut -f1 -d.`
 			source ./$i
 			# For all the cameras, apply filters
-			cd $FILTERSDIR/$ID/
+			cd $CONFIGDIR/$ID/
 				for f in *.conf
 				do
 				IDF=`basename $f | cut -f1 -d.`
