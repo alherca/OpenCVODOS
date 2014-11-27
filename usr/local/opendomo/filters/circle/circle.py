@@ -6,8 +6,20 @@
 import cv2
 import numpy as np
 
+
+ID=sys.argv[1]
+
+config = ConfigParser.ConfigParser()
+config.read('/etc/opendomo/vision/filters/' + ID + '/circle.conf')
+confID = config.get('Definition', 'ID')
+confNAME = config.get('Definition', 'NAME')
+print confID
+print confNAME
+
+image = cv2.imread('/var/www/data/' + confID + '.jpg')
+
 # Load the images
-image =cv2.imread('images.jpg')
+#image =cv2.imread('images.jpg')
 
 output = image.copy()
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -26,7 +38,7 @@ if circles is not None:
 		cv2.circle(output, (x, y), r, (0, 255, 0), 4)
 		cv2.rectangle(output, (x - 5, y - 5), (x + 5, y + 5), (0, 128, 255), -1)
 
-cv2.imwrite('facesale.png',output)
+cv2.imwrite('/var/www/data/facesale.png',output)
  
 	# show the output image
 #	cv2.imshow("output", np.hstack([image, output]))
