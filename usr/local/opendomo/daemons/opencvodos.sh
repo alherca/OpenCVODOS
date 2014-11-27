@@ -17,6 +17,7 @@ PIDFILE="/var/opendomo/run/opencvodos.pid"
 REFRESH="2"
 CONFIGDIR="/etc/opendomo/vision/filters"
 FILTERSDIR="/usr/local/opendomo/filters"
+export PYTHONPATH=/var/lib/python-support/python2.7/:$PYTHONPATH
 
 do_daemon() {
   	
@@ -36,7 +37,7 @@ do_daemon() {
 				do
 				IDF=`basename $f | cut -f1 -d.`
 				source ./$f
-				$FILTERSDIR/$IDF/$IDF.py $ID
+				python $FILTERSDIR/$IDF/$IDF.py $ID
 				done
 		done
 		sleep $REFRESH
