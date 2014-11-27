@@ -23,9 +23,10 @@ do_daemon() {
   	
   echo 1 > $PIDFILE
 	
-	cd $CONFIGDIR
+	# cd $CONFIGDIR
 	while test -f $PIDFILE
 	do
+	cd $CONFIGDIR
 		for i in *.conf
 		do
 			# All camerras
