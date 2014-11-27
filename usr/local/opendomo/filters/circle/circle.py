@@ -40,7 +40,8 @@ if circles is not None:
 		# corresponding to the center of the circle
 		cv2.circle(output, (x, y), r, (0, 255, 0), 4)
 		cv2.rectangle(output, (x - 5, y - 5), (x + 5, y + 5), (0, 128, 255), -1)
-
+	
+	# save the output image
 cv2.imwrite('/var/www/data/facesale.png',output)
  
 	# show the output image
