@@ -16,34 +16,28 @@ DESC="OpenCVODOS"
 PIDFILE="/var/opendomo/run/opencvodos.pid"
 REFRESH="2"
 CONFIGDIR="/etc/opendomo/vision/filters"
+FILTERSDIR="/usr/local/opendomo/filters/"
 
 do_daemon() {
   	
-  #echo 1 > $PIDFILE
+  echo 1 > $PIDFILE
 	
 	cd $CONFIGDIR
 	while test -f $PIDFILE
 	do
 		for i in *.conf
 		do
-			##TYPE="local"
+			# All camerras
 			ID=`basename $i | cut -f1 -d.`
 			source ./$i
-			# For all the cameras, shift current snapshot with previous
-			##cp /var/www/data/$ID.jpeg /var/www/data/prev_$ID.jpeg 2>/dev/null
-			##if test $TYPE = "local"
-			##then
-				# If the camera is local (USB attached) extract image
-				##fswebcam -d $DEVICE -r 640x480 /var/www/data/$ID.jpeg 
-				# Only for the local cameras, notify the event
-				##logevent camchange odvision "Updating snapshot" /var/www/data/$ID.jpeg
-			##fi
-			
-			# Special case for dummy cameras, just using nocam static
-			##if test $TYPE = "dummy"
-			##then
-				##cp /var/www/images/nocam.jpeg /var/www/data/$ID.jpeg
-			##fi
+			# For all the cameras, apply filters
+			cd $FILTERSDIR/$ID/
+				for f in *.conf
+				do
+				IDF=`basename $f | cut -f1 -d.`
+				source ./$f
+				$FILTERSDIR/$IDF/$IDF.py $ID
+				done
 		done
 		sleep $REFRESH
 	done
