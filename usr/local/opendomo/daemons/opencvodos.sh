@@ -30,13 +30,13 @@ do_daemon() {
 		do
 			# All camerras
 			ID=`basename $i | cut -f1 -d.`
-			source ./$i
+			# source ./$i
 			# For all the cameras, apply filters
 			cd $CONFIGDIR/$ID/
 				for f in *.conf
 				do
 				IDF=`basename $f | cut -f1 -d.`
-				source ./$f
+				# source ./$f
 				python $FILTERSDIR/$IDF/$IDF.py $ID
 				done
 		done
