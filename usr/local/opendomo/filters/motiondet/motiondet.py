@@ -12,6 +12,7 @@ import numpy as np
 
 IDC=sys.argv[1]
 
+# Read parameters or arguments
 config = ConfigParser.ConfigParser()
 config.read('/etc/opendomo/vision/filters/' + IDC + '/motiondet.conf')
 confID = config.get('Definition', 'ID')
