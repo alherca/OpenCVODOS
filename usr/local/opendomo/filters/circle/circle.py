@@ -12,6 +12,7 @@ import numpy as np
 
 ID=sys.argv[1]
 
+# Read parameters or arguments
 config = ConfigParser.ConfigParser()
 config.read('/etc/opendomo/vision/filters/' + ID + '/circle.conf')
 confID = config.get('Definition', 'ID')
@@ -44,6 +45,6 @@ if circles is not None:
 	# save the output image
 cv2.imwrite('/var/www/data/facesale.png',output)
  
-	# show the output image
+	# show the output image only PC
 #	cv2.imshow("output", np.hstack([image, output]))
 #	cv2.waitKey(0)
