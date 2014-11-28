@@ -6,8 +6,8 @@
 # Should-Start:      
 # Default-Start:     1 2 3 4 5
 # Default-Stop:      0 6
-# Short-Description: Vision
-# Description:       Vision
+# Short-Description: OpenCVODOS
+# Description:       OpenCVODOS
 #
 ### END INIT INFO
 
