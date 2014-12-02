@@ -29,6 +29,8 @@ imgbc = cv2.cvtColor(imgb, cv2.COLOR_BGR2GRAY)
 img1 = imgac[10:330, 10:870]
 img2 = imgbc[10:320, 10:870]
 
+cv2.imwrite('/var/www/data/' + confID + '_motiondet.png,oimgb)
+
 start = time.clock()
 d = cv2.absdiff(img1,img2)
 s = d.sum()
