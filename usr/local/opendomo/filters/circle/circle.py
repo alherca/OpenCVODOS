@@ -43,7 +43,7 @@ if circles is not None:
 		cv2.rectangle(output, (x - 5, y - 5), (x + 5, y + 5), (0, 128, 255), -1)
 	
 	# save the output image
-cv2.imwrite('/var/www/data/facesale.png',output)
+cv2.imwrite('/var/www/data/' + confID + '_circle.png,output)
  
 	# show the output image only PC
 #	cv2.imshow("output", np.hstack([image, output]))
