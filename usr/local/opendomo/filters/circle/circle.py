@@ -35,7 +35,7 @@ circles = cv2.HoughCircles(gray, cv2.cv.CV_HOUGH_GRADIENT, 1.2, 100)
 if circles is not None:
 	# convert the (x, y) coordinates and radius of the circles to integers
 	circles = np.round(circles[0, :]).astype("int")
-	subprocess.call(["/bin/logevent", "motiondet opencvodos Motion detected in + confID +  /var/www/data/ + confID + _circle.png"])
+	subprocess.call(["/bin/logevent", "motiondet", "opencvodos", "Motion detected in + confID +  /var/www/data/ + confID + _circle.png"])
 	# logevent motiondet opencvodos "Motion detected in " + confID + " /var/www/data/" + confID + "_circle.png"
  
 	# loop over the (x, y) coordinates and radius of the circles
