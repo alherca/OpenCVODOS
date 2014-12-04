@@ -39,7 +39,7 @@ do_daemon() {
 				IDF=`basename $fil | cut -f1 -d.`
 				# source ./$f
 				python $FILTERSDIR/$IDF/$IDF.py $ID
-				logevent $IDF opencvodos "Motion detected in $ID" 
+				# no in daemon logevent $IDF opencvodos "Motion detected in $ID" 
 				done
 		done
 		sleep $REFRESH
