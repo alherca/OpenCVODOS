@@ -38,6 +38,9 @@ t = time.clock() - start
 print 'absdiff ', t
 print s
 
+if s != 0 :
+  subprocess.call(["/bin/logevent", "motiondet", "opencvodos", "Motion detected in " + confID +  " /var/www/data/" + confID + "_motiondet.png"])
+
 start = time.clock()
 s = cv2.norm(img1, img2, cv2.NORM_L1)
 t = time.clock() - start
