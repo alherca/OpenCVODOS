@@ -39,7 +39,7 @@ t = time.clock() - start
 print 'absdiff ', t
 print s
 
-if s != 0 :
+if s == 0 :
   subprocess.call(["/bin/logevent", "motiondet", "opencvodos", "Motion detected in " + confID +  " /var/www/data/" + confID + "_motiondet.png"])
 
 start = time.clock()
