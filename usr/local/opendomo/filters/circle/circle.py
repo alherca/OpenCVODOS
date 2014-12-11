@@ -1,5 +1,5 @@
 #!/bin/python
-#desc:Filter circle detection using a image
+#desc:Filter detection of circle using a image
 #package:opencvodos
 
 ### Copyright(c) 2014 OpenDomo Services SL. Licensed under GPL v3 or later
