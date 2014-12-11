@@ -30,7 +30,7 @@ imgbc = cv2.cvtColor(imgb, cv2.COLOR_BGR2GRAY)
 img1 = imgac[10:330, 10:870]
 img2 = imgbc[10:320, 10:870]
 
-cv2.imwrite('/var/www/data/' + confID + '_motiondet.png',imgb)
+# cv2.imwrite('/var/www/data/' + confID + '_motiondet.png',imgb)
 
 start = time.clock()
 d = cv2.absdiff(img1,img2)
@@ -41,6 +41,7 @@ print s
 
 if s != 0 :
   subprocess.call(["/bin/logevent", "motiondet", "opencvodos", "Motion detected in " + confID +  " /var/www/data/" + confID + "_motiondet.png"])
+  cv2.imwrite('/var/www/data/' + confID + '_motiondet.png',imgb)
 
 start = time.clock()
 s = cv2.norm(img1, img2, cv2.NORM_L1)
