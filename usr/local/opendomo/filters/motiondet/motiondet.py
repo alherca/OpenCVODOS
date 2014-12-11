@@ -1,5 +1,5 @@
 #!/bin/python
-#desc:Filter motion detection using a image
+#desc: Motion detection filter using an image
 #package:opencvodos
 
 ### Copyright(c) 2014 OpenDomo Services SL. Licensed under GPL v3 or later
