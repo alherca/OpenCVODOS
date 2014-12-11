@@ -25,5 +25,16 @@ if __name__ == '__main__':
     hog.setSVMDetector( cv2.HOGDescriptor_getDefaultPeopleDetector() )
     
     for fn in it.chain(*map(glob, sys.argv[1:])):
-      img = cv2.imread(fn)
-      
+        img = cv2.imread(fn)
+        found, w = hog.detectMultiScale(img, winStride=(8,8), padding=(32,32), scale=1.05)
+        found_filtered = []
+        for ri, r in enumerate(found):
+            for qi, q in enumerate(found):
+                if ri != qi and inside(r, q):
+                    break
+            else:
+                found_filtered.append(r)
+        draw_detections(img, found)
+        draw_detections(img, found_filtered, 3)
+        cv2.imshow('img', img)
+	cv2.imwrite('detectados.png',img) 
