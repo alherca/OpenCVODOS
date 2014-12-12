@@ -38,7 +38,7 @@ if __name__ == '__main__':
     hog.setSVMDetector( cv2.HOGDescriptor_getDefaultPeopleDetector() )
     
     img = cv2.imread('/var/www/data/' + confID + '.jpg')
-    found, w = hog.detectMultiScale(img, winStride=(8,8), padding=(32,32), scale=1.05)
+    found, w = hog.detectMultiScale(img, winStride=(8,8), padding=(32,32), scale=1.05),0
     found_filtered = []
     for ri, r in enumerate(found):
 	for qi, q in enumerate(found):
