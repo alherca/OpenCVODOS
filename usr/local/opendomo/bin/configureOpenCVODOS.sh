@@ -18,7 +18,7 @@ then
 	then
 		ID="$1"
 		NAME="$2"
-		test -d $CONFIGDIR/$ID/filters/ || mkdir $CONFIGDIR/$ID/filters/
+		test -d $CONFIGDIR/$ID/filters/ || mkdir -p $CONFIGDIR/$ID/filters/
 		FILENAME="$CONFIGDIR/$ID/$ID.conf"
 		echo "ID=$ID" > $FILENAME
 		echo "NAME='$NAME'" >> $FILENAME
