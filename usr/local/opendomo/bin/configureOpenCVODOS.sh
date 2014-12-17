@@ -6,7 +6,7 @@
 # Copyright(c) 2014 OpenDomo Services SL. Licensed under GPL v3 or later
 
 DEVNAME="opencvodos"
-CONFIGDIR="/etc/opendomo/vision/filters"
+CONFIGDIR="/etc/opendomo/vision"
 CAMDIR="/etc/opendomo/control/"
 
 test -d $CONFIGDIR || mkdir $CONFIGDIR
@@ -18,8 +18,8 @@ then
 	then
 		ID="$1"
 		NAME="$2"
-		test -d $CONFIGDIR/$ID || mkdir $CONFIGDIR/$ID
-		FILENAME="$CONFIGDIR/$ID.conf"
+		test -d $CONFIGDIR/$ID/filters/ || mkdir $CONFIGDIR/$ID/filters/
+		FILENAME="$CONFIGDIR/$ID/$ID.conf"
 		echo "ID=$ID" > $FILENAME
 		echo "NAME='$NAME'" >> $FILENAME
 	else
