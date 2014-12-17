@@ -15,7 +15,7 @@
 DESC="OpenCVODOS"
 PIDFILE="/var/opendomo/run/opencvodos.pid"
 REFRESH="2"
-CONFIGDIR="/etc/opendomo/vision/filters"
+CONFIGDIR="/etc/opendomo/vision"
 FILTERSDIR="/usr/local/opendomo/filters"
 export PYTHONPATH=/var/lib/python-support/python2.7/:$PYTHONPATH
 
@@ -33,7 +33,7 @@ do_daemon() {
 			ID=`basename $i | cut -f1 -d.`
 			# source ./$i
 			# For all the cameras, apply filters
-			cd $CONFIGDIR/$ID/
+			cd $CONFIGDIR/$ID/filters
 				for fil in *.conf
 				do
 				IDF=`basename $fil | cut -f1 -d.`
