@@ -11,7 +11,7 @@ CAMDIR="/etc/opendomo/control/"
 
 if ! test -z "$2"
 then
-	if test -f $CONFIGDIR/$1/$1.conf
+	if test -f $CONFIGDIR/$1.conf
 	then
 		ID="$1"
 		NAME="$2"
