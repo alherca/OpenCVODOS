@@ -9,7 +9,7 @@ DEVNAME="opencvodos"
 CONFIGDIR="/etc/opendomo/vision"
 CAMDIR="/etc/opendomo/control"
 
-test -d $CONFIGDIR || mkdir $CONFIGDIR
+# test -d $CONFIGDIR || mkdir $CONFIGDIR
 
 
 if ! test -z "$2"
