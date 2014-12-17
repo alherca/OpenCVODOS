@@ -15,7 +15,7 @@ IDC=sys.argv[1]
 
 # Read parameters or arguments
 config = ConfigParser.ConfigParser()
-config.read('/etc/opendomo/vision/filters/' + IDC + '/motiondet.conf')
+config.read('/etc/opendomo/vision/' + IDC + '/filters/motiondet.conf')
 confID = config.get('Definition', 'ID')
 confNAME = config.get('Definition', 'NAME')
 print confID
