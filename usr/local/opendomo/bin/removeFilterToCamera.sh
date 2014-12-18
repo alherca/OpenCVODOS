@@ -18,7 +18,7 @@ then
 	then
 		rm $CONFIGDIR/$ID/filters/$NAME.conf
 	else
-		echo "#INFO No filter were found, in OpenCVODOS"
+		echo "#INFO No filters were found, in OpenCVODOS"
 	fi
 else
 	cd $CAMDIR
