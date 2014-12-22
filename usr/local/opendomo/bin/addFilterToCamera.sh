@@ -14,11 +14,15 @@ then
 	if test -f $CONFIGDIR/$1.conf
 	then
 		ID="$1"
-		NAME="$2"
-		FILENAME="$CONFIGDIR/$ID/filters/$NAME.conf"
+		#NAME="$2"
+		shift
+		for filter in $*
+		do
+		FILENAME="$CONFIGDIR/$ID/filters/$filter.conf"
 		echo "[Definition]" > $FILENAME
 		echo "ID=$ID" >> $FILENAME
-		echo "NAME='$NAME'" >> $FILENAME
+		echo "NAME='$filter'" >> $FILENAME
+		done
 	else
 		echo "#INFO No cameras were found, in OpenCVODOS"
 	fi
