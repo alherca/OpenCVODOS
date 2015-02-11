@@ -1,5 +1,5 @@
 #!/bin/python
-#desc: Motion detection filter using an image
+#desc: Face detection filter using an image
 #package:opencvodos
 
 ### Copyright(c) 2014 OpenDomo Services SL. Licensed under GPL v3 or later
@@ -23,10 +23,27 @@ confNAME = config.get('Definition', 'NAME')
 #print confID
 #print confNAME
 
+# File cascade
+# faceCascade = cv2.CascadeClassifier('/etc/opendomo/')
+
 # Load image
 img = cv2.imread('/var/www/data/' + confID + '.jpg')
 
+imgc = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
+#Detect faces
+faces = faceCascade.detectMultiScale(
+    imgc,
+    scaleFactor=1.1,
+    minNeighbors=5,
+    minSize=(20, 20),
+    flags = cv2.cv.CV_HAAR_SCALE_IMAGE
+)
+
+# Rectangle
+for (x, y, w, h) in faces:
+    cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
+    
 
 # save log
 subprocess.call(["/bin/logevent", "facedet", "opencvodos", "detection of faces in " + confID +  " /var/www/data/" + confID + "_facedet.png"])
