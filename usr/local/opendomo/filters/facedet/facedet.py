@@ -24,7 +24,7 @@ confNAME = config.get('Definition', 'NAME')
 #print confNAME
 
 # File cascade
-# faceCascade = cv2.CascadeClassifier('/etc/opendomo/')
+faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 # Load image
 img = cv2.imread('/var/www/data/' + confID + '.jpg')
