@@ -13,6 +13,10 @@ $ plugin_add_from_gh.sh alherca OpenCVODOS
 Filtros
 =======
 circle = Filtro de prueba para detectar circulos.
+
 facedet = Detecta rostros en una imagen generada en alguna cámara del sistema.
+
 motiondet = Detecta movimiento en una cámara, comparando 2 imagenes.
+
 persons = Detecta personas en una imagen generada en alguna cámara del sistema.
+
