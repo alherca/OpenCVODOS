@@ -43,5 +43,7 @@ faces = faceCascade.detectMultiScale(
 # Rectangle
 for (x, y, w, h) in faces:
     cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
+# save log
+subprocess.call(["/bin/logevent", "facedet", "opencvodos", "detection of faces in " + confID +  " /var/www/data/" + confID + "_facedet.png"])
 #save output image
 cv2.imwrite('/var/www/data/' + confID + '_facedet.png',img)
